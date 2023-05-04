@@ -20,21 +20,33 @@ mixin _$SignInEvent {
   TResult when<TResult extends Object?>({
     required TResult Function(String value) onPasswordChanged,
     required TResult Function(String value) onEmailChanged,
-    required TResult Function() onSignInClick,
+    required TResult Function(StackRouter appRouter) onSignInClick,
+    required TResult Function() onRegisterClick,
+    required TResult Function() onAppleSignInClick,
+    required TResult Function() onGoogleSignInClick,
+    required TResult Function() onFacebookSignInClick,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String value)? onPasswordChanged,
     TResult? Function(String value)? onEmailChanged,
-    TResult? Function()? onSignInClick,
+    TResult? Function(StackRouter appRouter)? onSignInClick,
+    TResult? Function()? onRegisterClick,
+    TResult? Function()? onAppleSignInClick,
+    TResult? Function()? onGoogleSignInClick,
+    TResult? Function()? onFacebookSignInClick,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String value)? onPasswordChanged,
     TResult Function(String value)? onEmailChanged,
-    TResult Function()? onSignInClick,
+    TResult Function(StackRouter appRouter)? onSignInClick,
+    TResult Function()? onRegisterClick,
+    TResult Function()? onAppleSignInClick,
+    TResult Function()? onGoogleSignInClick,
+    TResult Function()? onFacebookSignInClick,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -43,6 +55,11 @@ mixin _$SignInEvent {
     required TResult Function(OnPasswordChanged value) onPasswordChanged,
     required TResult Function(OnEmailChanged value) onEmailChanged,
     required TResult Function(OnSignInClick value) onSignInClick,
+    required TResult Function(OnRegisterClick value) onRegisterClick,
+    required TResult Function(OnAppleSignInClick value) onAppleSignInClick,
+    required TResult Function(OnGoogleSignInClick value) onGoogleSignInClick,
+    required TResult Function(OnFacebookSignInClick value)
+        onFacebookSignInClick,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -50,6 +67,10 @@ mixin _$SignInEvent {
     TResult? Function(OnPasswordChanged value)? onPasswordChanged,
     TResult? Function(OnEmailChanged value)? onEmailChanged,
     TResult? Function(OnSignInClick value)? onSignInClick,
+    TResult? Function(OnRegisterClick value)? onRegisterClick,
+    TResult? Function(OnAppleSignInClick value)? onAppleSignInClick,
+    TResult? Function(OnGoogleSignInClick value)? onGoogleSignInClick,
+    TResult? Function(OnFacebookSignInClick value)? onFacebookSignInClick,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -57,6 +78,10 @@ mixin _$SignInEvent {
     TResult Function(OnPasswordChanged value)? onPasswordChanged,
     TResult Function(OnEmailChanged value)? onEmailChanged,
     TResult Function(OnSignInClick value)? onSignInClick,
+    TResult Function(OnRegisterClick value)? onRegisterClick,
+    TResult Function(OnAppleSignInClick value)? onAppleSignInClick,
+    TResult Function(OnGoogleSignInClick value)? onGoogleSignInClick,
+    TResult Function(OnFacebookSignInClick value)? onFacebookSignInClick,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -146,7 +171,11 @@ class _$OnPasswordChanged implements OnPasswordChanged {
   TResult when<TResult extends Object?>({
     required TResult Function(String value) onPasswordChanged,
     required TResult Function(String value) onEmailChanged,
-    required TResult Function() onSignInClick,
+    required TResult Function(StackRouter appRouter) onSignInClick,
+    required TResult Function() onRegisterClick,
+    required TResult Function() onAppleSignInClick,
+    required TResult Function() onGoogleSignInClick,
+    required TResult Function() onFacebookSignInClick,
   }) {
     return onPasswordChanged(value);
   }
@@ -156,7 +185,11 @@ class _$OnPasswordChanged implements OnPasswordChanged {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String value)? onPasswordChanged,
     TResult? Function(String value)? onEmailChanged,
-    TResult? Function()? onSignInClick,
+    TResult? Function(StackRouter appRouter)? onSignInClick,
+    TResult? Function()? onRegisterClick,
+    TResult? Function()? onAppleSignInClick,
+    TResult? Function()? onGoogleSignInClick,
+    TResult? Function()? onFacebookSignInClick,
   }) {
     return onPasswordChanged?.call(value);
   }
@@ -166,7 +199,11 @@ class _$OnPasswordChanged implements OnPasswordChanged {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String value)? onPasswordChanged,
     TResult Function(String value)? onEmailChanged,
-    TResult Function()? onSignInClick,
+    TResult Function(StackRouter appRouter)? onSignInClick,
+    TResult Function()? onRegisterClick,
+    TResult Function()? onAppleSignInClick,
+    TResult Function()? onGoogleSignInClick,
+    TResult Function()? onFacebookSignInClick,
     required TResult orElse(),
   }) {
     if (onPasswordChanged != null) {
@@ -181,6 +218,11 @@ class _$OnPasswordChanged implements OnPasswordChanged {
     required TResult Function(OnPasswordChanged value) onPasswordChanged,
     required TResult Function(OnEmailChanged value) onEmailChanged,
     required TResult Function(OnSignInClick value) onSignInClick,
+    required TResult Function(OnRegisterClick value) onRegisterClick,
+    required TResult Function(OnAppleSignInClick value) onAppleSignInClick,
+    required TResult Function(OnGoogleSignInClick value) onGoogleSignInClick,
+    required TResult Function(OnFacebookSignInClick value)
+        onFacebookSignInClick,
   }) {
     return onPasswordChanged(this);
   }
@@ -191,6 +233,10 @@ class _$OnPasswordChanged implements OnPasswordChanged {
     TResult? Function(OnPasswordChanged value)? onPasswordChanged,
     TResult? Function(OnEmailChanged value)? onEmailChanged,
     TResult? Function(OnSignInClick value)? onSignInClick,
+    TResult? Function(OnRegisterClick value)? onRegisterClick,
+    TResult? Function(OnAppleSignInClick value)? onAppleSignInClick,
+    TResult? Function(OnGoogleSignInClick value)? onGoogleSignInClick,
+    TResult? Function(OnFacebookSignInClick value)? onFacebookSignInClick,
   }) {
     return onPasswordChanged?.call(this);
   }
@@ -201,6 +247,10 @@ class _$OnPasswordChanged implements OnPasswordChanged {
     TResult Function(OnPasswordChanged value)? onPasswordChanged,
     TResult Function(OnEmailChanged value)? onEmailChanged,
     TResult Function(OnSignInClick value)? onSignInClick,
+    TResult Function(OnRegisterClick value)? onRegisterClick,
+    TResult Function(OnAppleSignInClick value)? onAppleSignInClick,
+    TResult Function(OnGoogleSignInClick value)? onGoogleSignInClick,
+    TResult Function(OnFacebookSignInClick value)? onFacebookSignInClick,
     required TResult orElse(),
   }) {
     if (onPasswordChanged != null) {
@@ -285,7 +335,11 @@ class _$OnEmailChanged implements OnEmailChanged {
   TResult when<TResult extends Object?>({
     required TResult Function(String value) onPasswordChanged,
     required TResult Function(String value) onEmailChanged,
-    required TResult Function() onSignInClick,
+    required TResult Function(StackRouter appRouter) onSignInClick,
+    required TResult Function() onRegisterClick,
+    required TResult Function() onAppleSignInClick,
+    required TResult Function() onGoogleSignInClick,
+    required TResult Function() onFacebookSignInClick,
   }) {
     return onEmailChanged(value);
   }
@@ -295,7 +349,11 @@ class _$OnEmailChanged implements OnEmailChanged {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String value)? onPasswordChanged,
     TResult? Function(String value)? onEmailChanged,
-    TResult? Function()? onSignInClick,
+    TResult? Function(StackRouter appRouter)? onSignInClick,
+    TResult? Function()? onRegisterClick,
+    TResult? Function()? onAppleSignInClick,
+    TResult? Function()? onGoogleSignInClick,
+    TResult? Function()? onFacebookSignInClick,
   }) {
     return onEmailChanged?.call(value);
   }
@@ -305,7 +363,11 @@ class _$OnEmailChanged implements OnEmailChanged {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String value)? onPasswordChanged,
     TResult Function(String value)? onEmailChanged,
-    TResult Function()? onSignInClick,
+    TResult Function(StackRouter appRouter)? onSignInClick,
+    TResult Function()? onRegisterClick,
+    TResult Function()? onAppleSignInClick,
+    TResult Function()? onGoogleSignInClick,
+    TResult Function()? onFacebookSignInClick,
     required TResult orElse(),
   }) {
     if (onEmailChanged != null) {
@@ -320,6 +382,11 @@ class _$OnEmailChanged implements OnEmailChanged {
     required TResult Function(OnPasswordChanged value) onPasswordChanged,
     required TResult Function(OnEmailChanged value) onEmailChanged,
     required TResult Function(OnSignInClick value) onSignInClick,
+    required TResult Function(OnRegisterClick value) onRegisterClick,
+    required TResult Function(OnAppleSignInClick value) onAppleSignInClick,
+    required TResult Function(OnGoogleSignInClick value) onGoogleSignInClick,
+    required TResult Function(OnFacebookSignInClick value)
+        onFacebookSignInClick,
   }) {
     return onEmailChanged(this);
   }
@@ -330,6 +397,10 @@ class _$OnEmailChanged implements OnEmailChanged {
     TResult? Function(OnPasswordChanged value)? onPasswordChanged,
     TResult? Function(OnEmailChanged value)? onEmailChanged,
     TResult? Function(OnSignInClick value)? onSignInClick,
+    TResult? Function(OnRegisterClick value)? onRegisterClick,
+    TResult? Function(OnAppleSignInClick value)? onAppleSignInClick,
+    TResult? Function(OnGoogleSignInClick value)? onGoogleSignInClick,
+    TResult? Function(OnFacebookSignInClick value)? onFacebookSignInClick,
   }) {
     return onEmailChanged?.call(this);
   }
@@ -340,6 +411,10 @@ class _$OnEmailChanged implements OnEmailChanged {
     TResult Function(OnPasswordChanged value)? onPasswordChanged,
     TResult Function(OnEmailChanged value)? onEmailChanged,
     TResult Function(OnSignInClick value)? onSignInClick,
+    TResult Function(OnRegisterClick value)? onRegisterClick,
+    TResult Function(OnAppleSignInClick value)? onAppleSignInClick,
+    TResult Function(OnGoogleSignInClick value)? onGoogleSignInClick,
+    TResult Function(OnFacebookSignInClick value)? onFacebookSignInClick,
     required TResult orElse(),
   }) {
     if (onEmailChanged != null) {
@@ -363,6 +438,8 @@ abstract class _$$OnSignInClickCopyWith<$Res> {
   factory _$$OnSignInClickCopyWith(
           _$OnSignInClick value, $Res Function(_$OnSignInClick) then) =
       __$$OnSignInClickCopyWithImpl<$Res>;
+  @useResult
+  $Res call({StackRouter appRouter});
 }
 
 /// @nodoc
@@ -372,35 +449,64 @@ class __$$OnSignInClickCopyWithImpl<$Res>
   __$$OnSignInClickCopyWithImpl(
       _$OnSignInClick _value, $Res Function(_$OnSignInClick) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? appRouter = null,
+  }) {
+    return _then(_$OnSignInClick(
+      null == appRouter
+          ? _value.appRouter
+          : appRouter // ignore: cast_nullable_to_non_nullable
+              as StackRouter,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$OnSignInClick implements OnSignInClick {
-  const _$OnSignInClick();
+  const _$OnSignInClick(this.appRouter);
+
+  @override
+  final StackRouter appRouter;
 
   @override
   String toString() {
-    return 'SignInEvent.onSignInClick()';
+    return 'SignInEvent.onSignInClick(appRouter: $appRouter)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$OnSignInClick);
+        (other.runtimeType == runtimeType &&
+            other is _$OnSignInClick &&
+            (identical(other.appRouter, appRouter) ||
+                other.appRouter == appRouter));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, appRouter);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$OnSignInClickCopyWith<_$OnSignInClick> get copyWith =>
+      __$$OnSignInClickCopyWithImpl<_$OnSignInClick>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String value) onPasswordChanged,
     required TResult Function(String value) onEmailChanged,
-    required TResult Function() onSignInClick,
+    required TResult Function(StackRouter appRouter) onSignInClick,
+    required TResult Function() onRegisterClick,
+    required TResult Function() onAppleSignInClick,
+    required TResult Function() onGoogleSignInClick,
+    required TResult Function() onFacebookSignInClick,
   }) {
-    return onSignInClick();
+    return onSignInClick(appRouter);
   }
 
   @override
@@ -408,9 +514,13 @@ class _$OnSignInClick implements OnSignInClick {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String value)? onPasswordChanged,
     TResult? Function(String value)? onEmailChanged,
-    TResult? Function()? onSignInClick,
+    TResult? Function(StackRouter appRouter)? onSignInClick,
+    TResult? Function()? onRegisterClick,
+    TResult? Function()? onAppleSignInClick,
+    TResult? Function()? onGoogleSignInClick,
+    TResult? Function()? onFacebookSignInClick,
   }) {
-    return onSignInClick?.call();
+    return onSignInClick?.call(appRouter);
   }
 
   @override
@@ -418,11 +528,15 @@ class _$OnSignInClick implements OnSignInClick {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String value)? onPasswordChanged,
     TResult Function(String value)? onEmailChanged,
-    TResult Function()? onSignInClick,
+    TResult Function(StackRouter appRouter)? onSignInClick,
+    TResult Function()? onRegisterClick,
+    TResult Function()? onAppleSignInClick,
+    TResult Function()? onGoogleSignInClick,
+    TResult Function()? onFacebookSignInClick,
     required TResult orElse(),
   }) {
     if (onSignInClick != null) {
-      return onSignInClick();
+      return onSignInClick(appRouter);
     }
     return orElse();
   }
@@ -433,6 +547,11 @@ class _$OnSignInClick implements OnSignInClick {
     required TResult Function(OnPasswordChanged value) onPasswordChanged,
     required TResult Function(OnEmailChanged value) onEmailChanged,
     required TResult Function(OnSignInClick value) onSignInClick,
+    required TResult Function(OnRegisterClick value) onRegisterClick,
+    required TResult Function(OnAppleSignInClick value) onAppleSignInClick,
+    required TResult Function(OnGoogleSignInClick value) onGoogleSignInClick,
+    required TResult Function(OnFacebookSignInClick value)
+        onFacebookSignInClick,
   }) {
     return onSignInClick(this);
   }
@@ -443,6 +562,10 @@ class _$OnSignInClick implements OnSignInClick {
     TResult? Function(OnPasswordChanged value)? onPasswordChanged,
     TResult? Function(OnEmailChanged value)? onEmailChanged,
     TResult? Function(OnSignInClick value)? onSignInClick,
+    TResult? Function(OnRegisterClick value)? onRegisterClick,
+    TResult? Function(OnAppleSignInClick value)? onAppleSignInClick,
+    TResult? Function(OnGoogleSignInClick value)? onGoogleSignInClick,
+    TResult? Function(OnFacebookSignInClick value)? onFacebookSignInClick,
   }) {
     return onSignInClick?.call(this);
   }
@@ -453,6 +576,10 @@ class _$OnSignInClick implements OnSignInClick {
     TResult Function(OnPasswordChanged value)? onPasswordChanged,
     TResult Function(OnEmailChanged value)? onEmailChanged,
     TResult Function(OnSignInClick value)? onSignInClick,
+    TResult Function(OnRegisterClick value)? onRegisterClick,
+    TResult Function(OnAppleSignInClick value)? onAppleSignInClick,
+    TResult Function(OnGoogleSignInClick value)? onGoogleSignInClick,
+    TResult Function(OnFacebookSignInClick value)? onFacebookSignInClick,
     required TResult orElse(),
   }) {
     if (onSignInClick != null) {
@@ -463,5 +590,542 @@ class _$OnSignInClick implements OnSignInClick {
 }
 
 abstract class OnSignInClick implements SignInEvent {
-  const factory OnSignInClick() = _$OnSignInClick;
+  const factory OnSignInClick(final StackRouter appRouter) = _$OnSignInClick;
+
+  StackRouter get appRouter;
+  @JsonKey(ignore: true)
+  _$$OnSignInClickCopyWith<_$OnSignInClick> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$OnRegisterClickCopyWith<$Res> {
+  factory _$$OnRegisterClickCopyWith(
+          _$OnRegisterClick value, $Res Function(_$OnRegisterClick) then) =
+      __$$OnRegisterClickCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$OnRegisterClickCopyWithImpl<$Res>
+    extends _$SignInEventCopyWithImpl<$Res, _$OnRegisterClick>
+    implements _$$OnRegisterClickCopyWith<$Res> {
+  __$$OnRegisterClickCopyWithImpl(
+      _$OnRegisterClick _value, $Res Function(_$OnRegisterClick) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$OnRegisterClick implements OnRegisterClick {
+  const _$OnRegisterClick();
+
+  @override
+  String toString() {
+    return 'SignInEvent.onRegisterClick()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$OnRegisterClick);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String value) onPasswordChanged,
+    required TResult Function(String value) onEmailChanged,
+    required TResult Function(StackRouter appRouter) onSignInClick,
+    required TResult Function() onRegisterClick,
+    required TResult Function() onAppleSignInClick,
+    required TResult Function() onGoogleSignInClick,
+    required TResult Function() onFacebookSignInClick,
+  }) {
+    return onRegisterClick();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String value)? onPasswordChanged,
+    TResult? Function(String value)? onEmailChanged,
+    TResult? Function(StackRouter appRouter)? onSignInClick,
+    TResult? Function()? onRegisterClick,
+    TResult? Function()? onAppleSignInClick,
+    TResult? Function()? onGoogleSignInClick,
+    TResult? Function()? onFacebookSignInClick,
+  }) {
+    return onRegisterClick?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String value)? onPasswordChanged,
+    TResult Function(String value)? onEmailChanged,
+    TResult Function(StackRouter appRouter)? onSignInClick,
+    TResult Function()? onRegisterClick,
+    TResult Function()? onAppleSignInClick,
+    TResult Function()? onGoogleSignInClick,
+    TResult Function()? onFacebookSignInClick,
+    required TResult orElse(),
+  }) {
+    if (onRegisterClick != null) {
+      return onRegisterClick();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(OnPasswordChanged value) onPasswordChanged,
+    required TResult Function(OnEmailChanged value) onEmailChanged,
+    required TResult Function(OnSignInClick value) onSignInClick,
+    required TResult Function(OnRegisterClick value) onRegisterClick,
+    required TResult Function(OnAppleSignInClick value) onAppleSignInClick,
+    required TResult Function(OnGoogleSignInClick value) onGoogleSignInClick,
+    required TResult Function(OnFacebookSignInClick value)
+        onFacebookSignInClick,
+  }) {
+    return onRegisterClick(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(OnPasswordChanged value)? onPasswordChanged,
+    TResult? Function(OnEmailChanged value)? onEmailChanged,
+    TResult? Function(OnSignInClick value)? onSignInClick,
+    TResult? Function(OnRegisterClick value)? onRegisterClick,
+    TResult? Function(OnAppleSignInClick value)? onAppleSignInClick,
+    TResult? Function(OnGoogleSignInClick value)? onGoogleSignInClick,
+    TResult? Function(OnFacebookSignInClick value)? onFacebookSignInClick,
+  }) {
+    return onRegisterClick?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(OnPasswordChanged value)? onPasswordChanged,
+    TResult Function(OnEmailChanged value)? onEmailChanged,
+    TResult Function(OnSignInClick value)? onSignInClick,
+    TResult Function(OnRegisterClick value)? onRegisterClick,
+    TResult Function(OnAppleSignInClick value)? onAppleSignInClick,
+    TResult Function(OnGoogleSignInClick value)? onGoogleSignInClick,
+    TResult Function(OnFacebookSignInClick value)? onFacebookSignInClick,
+    required TResult orElse(),
+  }) {
+    if (onRegisterClick != null) {
+      return onRegisterClick(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class OnRegisterClick implements SignInEvent {
+  const factory OnRegisterClick() = _$OnRegisterClick;
+}
+
+/// @nodoc
+abstract class _$$OnAppleSignInClickCopyWith<$Res> {
+  factory _$$OnAppleSignInClickCopyWith(_$OnAppleSignInClick value,
+          $Res Function(_$OnAppleSignInClick) then) =
+      __$$OnAppleSignInClickCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$OnAppleSignInClickCopyWithImpl<$Res>
+    extends _$SignInEventCopyWithImpl<$Res, _$OnAppleSignInClick>
+    implements _$$OnAppleSignInClickCopyWith<$Res> {
+  __$$OnAppleSignInClickCopyWithImpl(
+      _$OnAppleSignInClick _value, $Res Function(_$OnAppleSignInClick) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$OnAppleSignInClick implements OnAppleSignInClick {
+  const _$OnAppleSignInClick();
+
+  @override
+  String toString() {
+    return 'SignInEvent.onAppleSignInClick()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$OnAppleSignInClick);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String value) onPasswordChanged,
+    required TResult Function(String value) onEmailChanged,
+    required TResult Function(StackRouter appRouter) onSignInClick,
+    required TResult Function() onRegisterClick,
+    required TResult Function() onAppleSignInClick,
+    required TResult Function() onGoogleSignInClick,
+    required TResult Function() onFacebookSignInClick,
+  }) {
+    return onAppleSignInClick();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String value)? onPasswordChanged,
+    TResult? Function(String value)? onEmailChanged,
+    TResult? Function(StackRouter appRouter)? onSignInClick,
+    TResult? Function()? onRegisterClick,
+    TResult? Function()? onAppleSignInClick,
+    TResult? Function()? onGoogleSignInClick,
+    TResult? Function()? onFacebookSignInClick,
+  }) {
+    return onAppleSignInClick?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String value)? onPasswordChanged,
+    TResult Function(String value)? onEmailChanged,
+    TResult Function(StackRouter appRouter)? onSignInClick,
+    TResult Function()? onRegisterClick,
+    TResult Function()? onAppleSignInClick,
+    TResult Function()? onGoogleSignInClick,
+    TResult Function()? onFacebookSignInClick,
+    required TResult orElse(),
+  }) {
+    if (onAppleSignInClick != null) {
+      return onAppleSignInClick();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(OnPasswordChanged value) onPasswordChanged,
+    required TResult Function(OnEmailChanged value) onEmailChanged,
+    required TResult Function(OnSignInClick value) onSignInClick,
+    required TResult Function(OnRegisterClick value) onRegisterClick,
+    required TResult Function(OnAppleSignInClick value) onAppleSignInClick,
+    required TResult Function(OnGoogleSignInClick value) onGoogleSignInClick,
+    required TResult Function(OnFacebookSignInClick value)
+        onFacebookSignInClick,
+  }) {
+    return onAppleSignInClick(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(OnPasswordChanged value)? onPasswordChanged,
+    TResult? Function(OnEmailChanged value)? onEmailChanged,
+    TResult? Function(OnSignInClick value)? onSignInClick,
+    TResult? Function(OnRegisterClick value)? onRegisterClick,
+    TResult? Function(OnAppleSignInClick value)? onAppleSignInClick,
+    TResult? Function(OnGoogleSignInClick value)? onGoogleSignInClick,
+    TResult? Function(OnFacebookSignInClick value)? onFacebookSignInClick,
+  }) {
+    return onAppleSignInClick?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(OnPasswordChanged value)? onPasswordChanged,
+    TResult Function(OnEmailChanged value)? onEmailChanged,
+    TResult Function(OnSignInClick value)? onSignInClick,
+    TResult Function(OnRegisterClick value)? onRegisterClick,
+    TResult Function(OnAppleSignInClick value)? onAppleSignInClick,
+    TResult Function(OnGoogleSignInClick value)? onGoogleSignInClick,
+    TResult Function(OnFacebookSignInClick value)? onFacebookSignInClick,
+    required TResult orElse(),
+  }) {
+    if (onAppleSignInClick != null) {
+      return onAppleSignInClick(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class OnAppleSignInClick implements SignInEvent {
+  const factory OnAppleSignInClick() = _$OnAppleSignInClick;
+}
+
+/// @nodoc
+abstract class _$$OnGoogleSignInClickCopyWith<$Res> {
+  factory _$$OnGoogleSignInClickCopyWith(_$OnGoogleSignInClick value,
+          $Res Function(_$OnGoogleSignInClick) then) =
+      __$$OnGoogleSignInClickCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$OnGoogleSignInClickCopyWithImpl<$Res>
+    extends _$SignInEventCopyWithImpl<$Res, _$OnGoogleSignInClick>
+    implements _$$OnGoogleSignInClickCopyWith<$Res> {
+  __$$OnGoogleSignInClickCopyWithImpl(
+      _$OnGoogleSignInClick _value, $Res Function(_$OnGoogleSignInClick) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$OnGoogleSignInClick implements OnGoogleSignInClick {
+  const _$OnGoogleSignInClick();
+
+  @override
+  String toString() {
+    return 'SignInEvent.onGoogleSignInClick()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$OnGoogleSignInClick);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String value) onPasswordChanged,
+    required TResult Function(String value) onEmailChanged,
+    required TResult Function(StackRouter appRouter) onSignInClick,
+    required TResult Function() onRegisterClick,
+    required TResult Function() onAppleSignInClick,
+    required TResult Function() onGoogleSignInClick,
+    required TResult Function() onFacebookSignInClick,
+  }) {
+    return onGoogleSignInClick();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String value)? onPasswordChanged,
+    TResult? Function(String value)? onEmailChanged,
+    TResult? Function(StackRouter appRouter)? onSignInClick,
+    TResult? Function()? onRegisterClick,
+    TResult? Function()? onAppleSignInClick,
+    TResult? Function()? onGoogleSignInClick,
+    TResult? Function()? onFacebookSignInClick,
+  }) {
+    return onGoogleSignInClick?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String value)? onPasswordChanged,
+    TResult Function(String value)? onEmailChanged,
+    TResult Function(StackRouter appRouter)? onSignInClick,
+    TResult Function()? onRegisterClick,
+    TResult Function()? onAppleSignInClick,
+    TResult Function()? onGoogleSignInClick,
+    TResult Function()? onFacebookSignInClick,
+    required TResult orElse(),
+  }) {
+    if (onGoogleSignInClick != null) {
+      return onGoogleSignInClick();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(OnPasswordChanged value) onPasswordChanged,
+    required TResult Function(OnEmailChanged value) onEmailChanged,
+    required TResult Function(OnSignInClick value) onSignInClick,
+    required TResult Function(OnRegisterClick value) onRegisterClick,
+    required TResult Function(OnAppleSignInClick value) onAppleSignInClick,
+    required TResult Function(OnGoogleSignInClick value) onGoogleSignInClick,
+    required TResult Function(OnFacebookSignInClick value)
+        onFacebookSignInClick,
+  }) {
+    return onGoogleSignInClick(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(OnPasswordChanged value)? onPasswordChanged,
+    TResult? Function(OnEmailChanged value)? onEmailChanged,
+    TResult? Function(OnSignInClick value)? onSignInClick,
+    TResult? Function(OnRegisterClick value)? onRegisterClick,
+    TResult? Function(OnAppleSignInClick value)? onAppleSignInClick,
+    TResult? Function(OnGoogleSignInClick value)? onGoogleSignInClick,
+    TResult? Function(OnFacebookSignInClick value)? onFacebookSignInClick,
+  }) {
+    return onGoogleSignInClick?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(OnPasswordChanged value)? onPasswordChanged,
+    TResult Function(OnEmailChanged value)? onEmailChanged,
+    TResult Function(OnSignInClick value)? onSignInClick,
+    TResult Function(OnRegisterClick value)? onRegisterClick,
+    TResult Function(OnAppleSignInClick value)? onAppleSignInClick,
+    TResult Function(OnGoogleSignInClick value)? onGoogleSignInClick,
+    TResult Function(OnFacebookSignInClick value)? onFacebookSignInClick,
+    required TResult orElse(),
+  }) {
+    if (onGoogleSignInClick != null) {
+      return onGoogleSignInClick(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class OnGoogleSignInClick implements SignInEvent {
+  const factory OnGoogleSignInClick() = _$OnGoogleSignInClick;
+}
+
+/// @nodoc
+abstract class _$$OnFacebookSignInClickCopyWith<$Res> {
+  factory _$$OnFacebookSignInClickCopyWith(_$OnFacebookSignInClick value,
+          $Res Function(_$OnFacebookSignInClick) then) =
+      __$$OnFacebookSignInClickCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$OnFacebookSignInClickCopyWithImpl<$Res>
+    extends _$SignInEventCopyWithImpl<$Res, _$OnFacebookSignInClick>
+    implements _$$OnFacebookSignInClickCopyWith<$Res> {
+  __$$OnFacebookSignInClickCopyWithImpl(_$OnFacebookSignInClick _value,
+      $Res Function(_$OnFacebookSignInClick) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$OnFacebookSignInClick implements OnFacebookSignInClick {
+  const _$OnFacebookSignInClick();
+
+  @override
+  String toString() {
+    return 'SignInEvent.onFacebookSignInClick()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$OnFacebookSignInClick);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String value) onPasswordChanged,
+    required TResult Function(String value) onEmailChanged,
+    required TResult Function(StackRouter appRouter) onSignInClick,
+    required TResult Function() onRegisterClick,
+    required TResult Function() onAppleSignInClick,
+    required TResult Function() onGoogleSignInClick,
+    required TResult Function() onFacebookSignInClick,
+  }) {
+    return onFacebookSignInClick();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String value)? onPasswordChanged,
+    TResult? Function(String value)? onEmailChanged,
+    TResult? Function(StackRouter appRouter)? onSignInClick,
+    TResult? Function()? onRegisterClick,
+    TResult? Function()? onAppleSignInClick,
+    TResult? Function()? onGoogleSignInClick,
+    TResult? Function()? onFacebookSignInClick,
+  }) {
+    return onFacebookSignInClick?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String value)? onPasswordChanged,
+    TResult Function(String value)? onEmailChanged,
+    TResult Function(StackRouter appRouter)? onSignInClick,
+    TResult Function()? onRegisterClick,
+    TResult Function()? onAppleSignInClick,
+    TResult Function()? onGoogleSignInClick,
+    TResult Function()? onFacebookSignInClick,
+    required TResult orElse(),
+  }) {
+    if (onFacebookSignInClick != null) {
+      return onFacebookSignInClick();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(OnPasswordChanged value) onPasswordChanged,
+    required TResult Function(OnEmailChanged value) onEmailChanged,
+    required TResult Function(OnSignInClick value) onSignInClick,
+    required TResult Function(OnRegisterClick value) onRegisterClick,
+    required TResult Function(OnAppleSignInClick value) onAppleSignInClick,
+    required TResult Function(OnGoogleSignInClick value) onGoogleSignInClick,
+    required TResult Function(OnFacebookSignInClick value)
+        onFacebookSignInClick,
+  }) {
+    return onFacebookSignInClick(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(OnPasswordChanged value)? onPasswordChanged,
+    TResult? Function(OnEmailChanged value)? onEmailChanged,
+    TResult? Function(OnSignInClick value)? onSignInClick,
+    TResult? Function(OnRegisterClick value)? onRegisterClick,
+    TResult? Function(OnAppleSignInClick value)? onAppleSignInClick,
+    TResult? Function(OnGoogleSignInClick value)? onGoogleSignInClick,
+    TResult? Function(OnFacebookSignInClick value)? onFacebookSignInClick,
+  }) {
+    return onFacebookSignInClick?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(OnPasswordChanged value)? onPasswordChanged,
+    TResult Function(OnEmailChanged value)? onEmailChanged,
+    TResult Function(OnSignInClick value)? onSignInClick,
+    TResult Function(OnRegisterClick value)? onRegisterClick,
+    TResult Function(OnAppleSignInClick value)? onAppleSignInClick,
+    TResult Function(OnGoogleSignInClick value)? onGoogleSignInClick,
+    TResult Function(OnFacebookSignInClick value)? onFacebookSignInClick,
+    required TResult orElse(),
+  }) {
+    if (onFacebookSignInClick != null) {
+      return onFacebookSignInClick(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class OnFacebookSignInClick implements SignInEvent {
+  const factory OnFacebookSignInClick() = _$OnFacebookSignInClick;
 }

@@ -1,14 +1,25 @@
 import 'package:bloc_proj/app_blocs.dart';
 import 'package:bloc_proj/app_events.dart';
 import 'package:bloc_proj/app_states.dart';
+import 'package:bloc_proj/data/repository/ChatRepository.dart';
+import 'package:bloc_proj/navigation/app_router.dart';
 import 'package:bloc_proj/pages/sign_in/sign_in.dart';
 import 'package:bloc_proj/pages/welcome/bloc/welcome_blocs.dart';
 import 'package:bloc_proj/pages/welcome/welcome.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
-void main() {
+Future<void> main() async {
+
+// ...
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+  await SharedPrefs.instance.init();
   runApp(const MyApp());
 }
 
@@ -30,16 +41,13 @@ class MyApp extends StatelessWidget {
         ),
       ],
       child: ScreenUtilInit(
-        builder: (context, child) => MaterialApp(
-            routes: {
-              "Home": (context) => MyHomePage(title: "title"),
-              "signIn": (context) => SignIn()
-            },
+        builder: (context, child) => MaterialApp.router(
+          routerConfig: AppRouter().config(),
             theme: ThemeData(
                 appBarTheme: const AppBarTheme(
                     elevation: 0, backgroundColor: Colors.white)),
             debugShowCheckedModeBanner: false,
-            home: Welcome()),
+        ),
       ),
     );
   }

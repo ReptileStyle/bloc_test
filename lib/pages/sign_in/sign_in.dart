@@ -1,16 +1,21 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:bloc_proj/pages/sign_in/bloc/sign_in_bloc.dart';
 import 'package:bloc_proj/pages/sign_in/bloc/sign_in_event.dart';
 import 'package:bloc_proj/pages/sign_in/widgets/sign_in_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:scope_function/scope_function.dart';
 
 import 'bloc/sign_in_state.dart';
 
-class SignIn extends StatelessWidget {
+@RoutePage()
+class SignInScreen extends StatelessWidget {
+  const SignInScreen({super.key});
   @override
   Widget build(BuildContext context) {
     AppBar appBar = buildAppBar();
+    StackRouter appRouter = AutoRouter.of(context);
     return BlocProvider<SignInBloc>(
       create: (BuildContext context) => SignInBloc(),
       child: Container(
@@ -37,11 +42,11 @@ class SignIn extends StatelessWidget {
                         thirdPartyLogin(context),
                         Column(
                           children: [
-                            signInField1(),
+                            signInField1(context),
                             SizedBox(
                               height: 24.h,
                             ),
-                            signInField2(),
+                            signInField2(context),
                             forgotPasswordButton()
                           ],
                         ),
@@ -50,17 +55,25 @@ class SignIn extends StatelessWidget {
                             //wtf repaints
                             BlocBuilder<SignInBloc, SignInState>(
                                 buildWhen: (previousState, state) {
-                              return true;
+                              return false;
                             }, builder: (context, state) {
                               return loginButton(() {
                                 BlocProvider.of<SignInBloc>(context)
-                                    .add(const SignInEvent.onSignInClick());
+                                    .add(SignInEvent.onSignInClick(appRouter));
                               });
                             }),
                             SizedBox(
                               height: 15.h,
                             ),
-                            registerButton(),
+                            BlocBuilder<SignInBloc, SignInState>(
+                                buildWhen: (previousState, state) {
+                                  return false;
+                                }, builder: (context, state) {
+                              return registerButton(() {
+                                BlocProvider.of<SignInBloc>(context)
+                                    .add(const SignInEvent.onRegisterClick());
+                              });
+                            }),
                             SizedBox(
                               height: 20.h,
                             )
@@ -76,26 +89,43 @@ class SignIn extends StatelessWidget {
     );
   }
 
-  Widget signInField1() => SignInTextField(
-      leadingIcon: ImageIcon(
-        Image.asset(
-          "assets/icons/user.png",
-        ).image,
-        size: 12,
-      ),
-      hint: "Email",
-      onValueChange: (p0) => null);
+  Widget signInField1(BuildContext context) =>
+      BlocBuilder<SignInBloc, SignInState>(buildWhen: (previousState, state) {
+        return false;
+      }, builder: (context, state) {
+        return SignInTextField(
+            leadingIcon: ImageIcon(
+              Image.asset(
+                "assets/icons/user.png",
+              ).image,
+              size: 12,
+            ),
+            hint: "Email",
+            onValueChange: (String string) {
+              // print(string);
+              BlocProvider.of<SignInBloc>(context)
+                  .add(SignInEvent.onEmailChanged(string));
+            });
+      });
 
-  Widget signInField2() => SignInTextField(
-      leadingIcon: ImageIcon(
-        Image.asset(
-          "assets/icons/lock.png",
-        ).image,
-        size: 12,
-      ),
-      hint: "Password",
-      onValueChange: (p0) => null,
-      isPassword: true);
+  Widget signInField2(BuildContext context) =>
+      BlocBuilder<SignInBloc, SignInState>(buildWhen: (previousState, state) {
+        return false;
+      }, builder: (context, state) {
+        return SignInTextField(
+            leadingIcon: ImageIcon(
+              Image.asset(
+                "assets/icons/lock.png",
+              ).image,
+              size: 12,
+            ),
+            hint: "Password",
+            onValueChange: (String string) => {
+                  BlocProvider.of<SignInBloc>(context)
+                      .add(SignInEvent.onPasswordChanged(string))
+                },
+            isPassword: true);
+      });
 
   Widget thirdPartyLogin(BuildContext context) => Column(
         children: [
@@ -138,8 +168,8 @@ class SignIn extends StatelessWidget {
         ),
       );
 
-  Widget registerButton() => FilledButton(
-        onPressed: () {},
+  Widget registerButton(Function() onClick) => FilledButton(
+        onPressed: onClick,
         style: FilledButton.styleFrom(
             minimumSize: Size.fromHeight(50.w), backgroundColor: Colors.white),
         child: Text(
